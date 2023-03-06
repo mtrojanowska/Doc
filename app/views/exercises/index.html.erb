@@ -1,0 +1,8 @@
+<h1>Index of exercises</h1>
+<% @exercises.each do |exercise| %><br>
+<%= exercise.exercise %><br>
+<%= exercise.status %>
+<%= link_to 'See the solution', exercise_path(exercise)%><br>
+
+<% end %>
+<%= link_to 'Add an exercise', new_exercise_path(step_id: params[:step_id])%>

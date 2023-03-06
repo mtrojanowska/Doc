@@ -1,0 +1,10 @@
+<h1>Section index</h1>
+<% @sections.each do |section|%>
+Section:<br>
+<%= section.title %><br>
+<% section.exercises.each do |exercise| %><br>
+Exercise:<br>
+<%= exercise.exercise %><br>
+<%= exercise.status %><br>
+<% end %>
+<% end %>

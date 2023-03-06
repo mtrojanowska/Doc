@@ -1,0 +1,11 @@
+<h1>Steps#new</h1>
+<p>Find me in app/views/steps/new.html.erb</p>
+<%= form_with model: @step do |f| %>
+<%= f.hidden_field :task_id, value: params[:task_id]%>
+<%= f.label :description %>
+<%= f.text_area :description %>
+<%= f.label :solution %>
+<%= f.text_area :solution %>
+<%= f.submit %>
+<% end %>
+

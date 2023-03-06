@@ -1,0 +1,13 @@
+<h1>Tasks#show</h1>
+<p>Find me in app/views/tasks/show.html.erb</p>
+Task title:<br>
+<%= @task.title %><br>
+<% @task.steps.each do |step| %><br>
+Step description:
+<%= step.description %><br>
+<%= link_to 'Show step', step_path(step) %><br>
+<%= link_to 'Solution', step_path(step) %><br>
+<%= link_to 'Exercises', exercises_path(step_id: step.id) %><br>
+<% end %>
+
+<%= link_to 'Add a step', new_step_path(task_id: @task.id)%>

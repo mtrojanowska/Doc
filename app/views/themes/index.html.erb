@@ -1,0 +1,14 @@
+<h1>Themes index</h1>
+<% @themes.each do |theme|%><br>
+Theme:
+<%= theme.title %><br>
+Sections:<br>
+<% theme.sections.each do |section| %>
+<%= link_to section.title, section_path(section) %> |<br> 
+
+<% end %><br>
+<%= link_to 'Add a section', new_section_path(theme_id: theme.id) %><br>
+
+<% end %><br>
+
+<%= link_to 'Create theme', new_theme_path %>

@@ -1,0 +1,16 @@
+<h1>Exercises#new</h1>
+<p>Find me in app/views/exercises/new.html.erb</p>
+<%= form_with model: @exercise do |f| %>
+<%= f.hidden_field :step_id, value: params[:step_id]%>
+
+<%= f.label :tag %><br>
+<%= f.text_field :tag %><br>
+
+<%= f.label :what_to_do %><br>
+<%= f.text_area :exercise %><br>
+
+<%= f.label :solution %><br>
+<%= f.text_area :solution %><br>
+<%= f.collection_select(:section_id, Section.all, :id, :title, {prompt: 'Select the section'})%>
+<%= f. submit %>
+<% end %>

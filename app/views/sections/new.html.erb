@@ -1,0 +1,6 @@
+<%= form_with model: @section do |f| %>
+<%= f.hidden_field :theme_id, value: params[:theme_id]%>
+<%= f.label :section %><br>
+<%= f.text_field :title %><br>
+<%= f.submit %><br>
+<% end %>

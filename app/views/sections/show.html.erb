@@ -1,0 +1,19 @@
+
+<h1>Show content of the section</h1>
+<% @section.paragraphs.each do |paragraph|%>
+<%= paragraph.content %><br>
+<% if paragraph.images.attached? %>
+<%  paragraph.images.each do |image| %>
+    <%= image_tag image.variant(resize_to_limit: [100, nil]) %><br>
+ <% end %>
+ 
+ <% end%>
+ <%= link_to 'Edit paragraph', edit_paragraph_path(section_id: @section.id)%>
+<% end %>
+<%= link_to 'See exercises', exercises_path(section_id: @section.id) %>
+
+
+
+<br>
+
+<%= link_to 'Add a paragraph', new_paragraph_path(section_id: @section.id) %><br>
